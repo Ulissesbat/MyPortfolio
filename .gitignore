@@ -1,0 +1,28 @@
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Arquivos de IDE/editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs e dependências
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+node_modules/
+
+# Ambiente local
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Build automático
+dist/
+build/
+out/

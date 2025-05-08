@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulisses Santana - Desenvolvedor Java</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --background: #f9f9f9;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--background);
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            margin-bottom: 1rem;
+            background-color: #eee; /* Cor de fundo caso a imagem não carregue */
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: var(--secondary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        h3 {
+            color: var(--dark);
+        }
+        
+        .contact-info {
+            margin: 1rem 0;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        section {
+            background-color: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .job {
+            margin-bottom: 1.5rem;
+        }
+        
+        .job-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+        
+        .company {
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
+        .date {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill {
+            background-color: var(--light);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .project-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .project-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .project-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        
+        .certificates {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .certificate-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+        }
+        
+        .certificate-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        .github-link {
+            display: inline-block;
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .github-link:hover {
+            background-color: #555;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .projects, .certificates {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-pic {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .contact-info a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="profile-container">
+                <!-- IMPORTANTE: Coloque sua foto na mesma pasta com o nome "perfil.jpg" -->
+                <!-- Ou altere o "src" abaixo para o nome do seu arquivo de foto -->
+                <img src="perfil.jpg" alt="Foto de Ulisses Santana" class="profile-pic">
+                <div>
+                    <h1>Ulisses Batista Santana</h1>
+                    <p>Desenvolvedor Java | Engenharia de Software</p>
+                </div>
+            </div>
+            <div class="contact-info">
+                <a href="mailto:santana.gru@gmail.com"><i class="fas fa-envelope"></i> santana.gru@gmail.com</a>
+                <a href="tel:+5511954292806"><i class="fas fa-phone"></i> (11) 95429-2806</a>
+                <a href="https://wa.me/5511954292806"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://github.com/Ulissesbat" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section id="about">
+            <h2>Sobre Mim</h2>
+            <p>Profissional com experiência em telecomunicações e fibra óptica, atualmente em transição de carreira para a área de desenvolvimento de software. Cursando Engenharia de Software e com formação complementar em Java e Spring Boot. Comprometido em contribuir com minha bagagem de conhecimento para agregar valor à empresa.</p>
+        </section>
+        
+        <section id="objective">
+            <h2>Objetivo</h2>
+            <p>Busco uma oportunidade para ingressar na área de programação em Java, aplicando meus conhecimentos em desenvolvimento back-end e frameworks modernos.</p>
+        </section>
+        
+        <section id="education">
+            <h2>Formação Acadêmica</h2>
+            <div class="job">
+                <div class="job-title">Engenharia de Software</div>
+                <div class="company">ANHANGUERA-AMPLI</div>
+                <div class="date">2025</div>
+            </div>
+            
+            <h3>Cursos Complementares</h3>
+            <ul>
+                <li>Linguagem de Programação Java - UDEMY (2024)</li>
+                <li>Back-end com Java e Spring - DEV SUPERIOR (2025)</li>
+            </ul>
+        </section>
+        
+        <section id="experience">
+            <h2>Experiência Profissional</h2>
+            
+            <div class="job">
+
+                 <div class="job">
+                <div class="job-title">Técnico em Fibra Óptica</div>
+                <div class="company">ICOMON TECNOLOGIA</div>
+                <div class="date">2023 - Atual</div>
+                <ul>
+                    <li>Construção e manutenção de redes de fibra óptica</li>
+                
+            </div>
+            
+           </ul>
+
+                <div class="job-title">Técnico em Fibra Óptica</div>
+                <div class="company">SEREDE</div>
+                <div class="date">2020 - 2023</div>
+                <ul>
+                    <li>Construir, identificar e solucionar problemas em cabos ópticos</li>
+                    <li>Construção de rede incluindo DGO, DGOI, CTO's, CDOE's, CEOS, fusões</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <div class="job-title">Técnico MultSkill</div>
+                <div class="company">ICOMON</div>
+                <div class="date">2018 - 2020</div>
+                <ul>
+                    <li>Instalação e manutenção de fibra óptica</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <div class="job-title">Prospector</div>
+                <div class="company">IKENAGA TELECOM</div>
+                <div class="date">2018 - 2020</div>
+                <ul>
+                    <li>Prospecção de condomínios para cabeamento óptico</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <div class="job-title">Técnico em Comunicação de Dados</div>
+                <div class="company">TELLFERA SOLUÇÕES</div>
+                <div class="date">2017 - 2018</div>
+                <ul>
+                    <li>Serviços relacionados a telecomunicação</li>
+                    <li>Instalação de PABX, redes móveis</li>
+                    <li>Consultoria especializada em telecomunicações</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="projects">
+            <h2>Projetos Desenvolvidos</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <div class="project-title">Sistema de Agendamento Online</div>
+                    <p>Sistema completo para agendamentos online com integração de calendário.</p>
+                    <a href="https://github.com/Ulissesbat/SistemaDeAgendamentoOnLine" target="_blank" class="project-link">Ver no GitHub →</a>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-title">Gerador de PDF</div>
+                    <p>Aplicação para geração dinâmica de documentos PDF.</p>
+                    <a href="https://github.com/Ulissesbat/PdfGenerator" target="_blank" class="project-link">Ver no GitHub →</a>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-title">DS Catalog Security</div>
+                    <p>Sistema de catálogo com autenticação e autorização Spring Security.</p>
+                    <a href="https://github.com/Ulissesbat/ds-catalog-security" target="_blank" class="project-link">Ver no GitHub →</a>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-title">EventCity</div>
+                    <p>Plataforma para gerenciamento de eventos e ingressos.</p>
+                    <a href="https://github.com/Ulissesbat/EventCity" target="_blank" class="project-link">Ver no GitHub →</a>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-title">DSCommerce</div>
+                    <p>E-commerce completo com carrinho de compras e pagamento.</p>
+                    <a href="https://github.com/Ulissesbat/DSComerce" target="_blank" class="project-link">Ver no GitHub →</a>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-title">Book Management</div>
+                    <p>Sistema de gerenciamento de biblioteca com CRUD completo.</p>
+                    <a href="https://github.com/Ulissesbat/bookManagement" target="_blank" class="project-link">Ver no GitHub →</a>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-title">Controle de Fluxo</div>
+                    <p>Aplicação para controle de processos e fluxos de trabalho.</p>
+                    <a href="https://github.com/Ulissesbat/controle-de-fluxo" target="_blank" class="project-link">Ver no GitHub →</a>
+                </div>
+            </div>
+            
+            <a href="https://github.com/Ulissesbat" target="_blank" class="github-link">
+                <i class="fab fa-github"></i> Ver todos os projetos no GitHub
+            </a>
+        </section>
+        
+        <section id="certificates">
+            <h2>Certificados</h2>
+            <div class="certificates">
+                <div class="certificate-card">
+                    <div class="certificate-title">Back-end com Java e Spring</div>
+                    <div class="company">DevSuperior</div>
+                    <a href="https://devsuperior.club/c/5-2728" target="_blank" class="project-link">Ver certificado →</a>
+                </div>
+                
+                <div class="certificate-card">
+                    <div class="certificate-title">Linguagem de Programação Java</div>
+                    <div class="company">UDEMY</div>
+                    <a href="https://www.udemy.com/certificate/UC-530b73d4-fe04-47ca-9e67-ad6be23bca21/" target="_blank" class="project-link">Ver certificado →</a>
+                </div>
+                
+                <div class="certificate-card">
+                    <div class="certificate-title">Spring Framework</div>
+                    <div class="company">UDEMY</div>
+                    <a href="https://www.udemy.com/certificate/UC-44250327-bd2b-44c9-b2a5-850b5915f0fc/" target="_blank" class="project-link">Ver certificado →</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills">
+            <h2>Habilidades Técnicas</h2>
+            <div class="skills">
+                <span class="skill">Java</span>
+                <span class="skill">POO</span>
+                <span class="skill">Git/GitHub</span>
+                <span class="skill">Spring Boot</span>
+                <span class="skill">API Rest</span>
+                <span class="skill">SQL</span>
+                <span class="skill">Web Services</span>
+                <span class="skill">Spring Security</span>
+                <span class="skill">Hibernate</span>
+                <span class="skill">JPA</span>
+                <span class="skill">Maven</span>
+                <span class="skill">JUnit</span>
+                <span class="skill">PostgreSQL</span>
+                <span class="skill">MySQL</span>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Ulisses Batista Santana - Todos os direitos reservados</p>
+            <p>
+                <a href="mailto:santana.gru@gmail.com" style="color: white;"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/5511954292806" style="color: white; margin: 0 10px;"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://github.com/Ulissesbat" target="_blank" style="color: white;"><i class="fab fa-github"></i></a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

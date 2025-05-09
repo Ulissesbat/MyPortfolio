@@ -24,18 +24,34 @@
         }
         
         header {
-            background-color: var(--primary);
             color: white;
             padding: 2rem 0;
             text-align: center;
             position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)),
+                url('ulissesjava.jpg') no-repeat left center;
+            background-size: cover;
+         
+            z-index: 1;
         }
         
         .profile-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
         }
         
         .profile-pic {
@@ -43,21 +59,24 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            border: 4px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             margin-bottom: 1rem;
-            background-color: #eee; /* Cor de fundo caso a imagem não carregue */
+            background-color: transparent;
         }
         
         .container {
             width: 85%;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
         }
         
         h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            position: relative;
         }
         
         h2 {
@@ -72,17 +91,19 @@
         }
         
         .contact-info {
-            margin: 1rem 0;
+            margin: 1.5rem 0;
         }
         
         .contact-info a {
             color: white;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
         
         .contact-info a:hover {
-            text-decoration: underline;
+            color: var(--secondary);
         }
         
         section {
@@ -200,37 +221,39 @@
             background-color: #555;
         }
         
-        @media (max-width: 768px) {
-            .container {
-                width: 95%;
+         @media (max-width: 768px) {
+            header::before {
+                transform: translateX(-10%);
+            }
+            
+            .profile-pic {
+                width: 130px;
+                height: 130px;
             }
             
             h1 {
-                font-size: 2rem;
+                font-size: 1.7rem;
+            }
+            
+            .container {
+                width: 95%;
             }
             
             .projects, .certificates {
                 grid-template-columns: 1fr;
             }
             
-            .profile-pic {
-                width: 120px;
-                height: 120px;
-            }
-            
             .contact-info a {
                 display: block;
-                margin: 5px 0;
+                margin: 10px 0;
             }
         }
     </style>
 </head>
 <body>
-    <header>
+   <header>
         <div class="container">
             <div class="profile-container">
-                <!-- IMPORTANTE: Coloque sua foto na mesma pasta com o nome "perfil.jpg" -->
-                <!-- Ou altere o "src" abaixo para o nome do seu arquivo de foto -->
                 <img src="perfil.jpg" alt="Foto de Ulisses Santana" class="profile-pic">
                 <div>
                     <h1>Ulisses Batista Santana</h1>
@@ -276,18 +299,15 @@
             <h2>Experiência Profissional</h2>
             
             <div class="job">
-
-                 <div class="job">
                 <div class="job-title">Técnico em Fibra Óptica</div>
                 <div class="company">ICOMON TECNOLOGIA</div>
                 <div class="date">2023 - Atual</div>
                 <ul>
                     <li>Construção e manutenção de redes de fibra óptica</li>
-                
+                </ul>
             </div>
             
-           </ul>
-
+            <div class="job">
                 <div class="job-title">Técnico em Fibra Óptica</div>
                 <div class="company">SEREDE</div>
                 <div class="date">2020 - 2023</div>
